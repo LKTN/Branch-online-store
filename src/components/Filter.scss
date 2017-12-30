@@ -1,0 +1,18 @@
+.filter {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  cursor: pointer;
+  height: 40px;
+  width: 40%;
+
+  &--hidden {
+    display: none;
+  }
+
+  &__text {
+    color: #4e4c4c;
+  }
+}

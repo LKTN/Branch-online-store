@@ -1,0 +1,59 @@
+.formFilter {
+  height: max-content;
+  border: 1px solid grey;
+  padding: 30px 10px;
+
+  &__fieldset {
+    border: none;
+  }
+
+  &__legend {
+    font-weight: bold;
+    opacity: 0.7;
+  }
+
+  &__inputRange {
+    width: 70px;
+  }
+
+  &__span {
+    padding: 0 30px;
+  }
+
+  &__brandList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    padding-right: 15%;
+    margin-bottom: 5px;
+  }
+
+  &__label {
+
+  }
+
+  &__checkbox {
+    margin-right: 3px;
+  }
+
+  &__submit {
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: #f7f7f7;
+    padding: 3px 28px;
+  }
+
+  &__reset {
+    border: none;
+    background: white;
+    text-decoration: underline;
+    margin-left: 20px;
+  }
+
+}
