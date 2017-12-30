@@ -22,3 +22,12 @@ export const addInfoProductData = (totalCountOfProducts, brands) => {
     brands: brands
   }
 }
+
+export const applyFilterForm = (filterFrom, filterTo, checkedBrands) => {
+  return {
+    type: 'APPLY_FILTER_FORM',
+    filterFrom: filterFrom,
+    filterTo: filterTo,
+    checkedBrands: checkedBrands
+  }
+}

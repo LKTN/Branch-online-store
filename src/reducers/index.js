@@ -4,7 +4,10 @@ const initialState = {
   totalCountOfProducts: 0,
   showedItems: 6,
   showFilter: true,
-  brands: []
+  brands: [],
+  checkedBrands: [],
+  filterFrom: 0,
+  filterTo: 100000
 }
 
 const storeApp = (state = initialState, action) => {
@@ -24,7 +27,10 @@ const storeApp = (state = initialState, action) => {
         countCartItems: state.countCartItems + 1,
         totalCountOfProducts: state.totalCountOfProducts,
         showedItems: state.showedItems,
-        brands: state.brands
+        brands: state.brands,
+        checkedBrands: state.checkedBrands,
+        filterFrom: state.filterFrom,
+        filterTo: state.filterTo
       }
 
     case 'TOGGLE_FILTER':
@@ -33,7 +39,10 @@ const storeApp = (state = initialState, action) => {
         countCartItems: state.countCartItems,
         totalCountOfProducts: state.totalCountOfProducts,
         showedItems: action.showedItems,
-        brands: state.brands
+        brands: state.brands,
+        checkedBrands: state.checkedBrands,
+        filterFrom: state.filterFrom,
+        filterTo: state.filterTo
       };
 
     case 'ADD_INFO_PRODUCT_DATA':
@@ -42,7 +51,22 @@ const storeApp = (state = initialState, action) => {
         countCartItems: state.countCartItems,
         totalCountOfProducts: action.totalCountOfProducts,
         showedItems: state.showedItems,
-        brands: action.brands
+        brands: action.brands,
+        checkedBrands: state.checkedBrands,
+        filterFrom: state.filterFrom,
+        filterTo: state.filterTo
+      };
+
+    case 'APPLY_FILTER_FORM':
+      return {
+        cart: state.cart,
+        countCartItems: state.countCartItems,
+        totalCountOfProducts: state.totalCountOfProducts,
+        showedItems: state.showedItems,
+        brands: state.brands,
+        checkedBrands: action.checkedBrands,
+        filterFrom: action.filterFrom,
+        filterTo: action.filterTo
       }
 
     default:
