@@ -99,7 +99,7 @@ let ProductSection = (props) => {
     }
   }
 
-  props.dispatch( addInfoProductData(goodsData.goodsList.length, brands) )
+  props.dispatch( addInfoProductData(brands) )
 
   return (
     <section className='productSection'>

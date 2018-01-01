@@ -1,7 +1,7 @@
 const initialState = {
   cart: [],
   countCartItems: 0,
-  totalCountOfProducts: 0,
+  totalCountOfProducts: 12,
   showedItems: 6,
   showFilter: true,
   brands: [],
@@ -49,7 +49,7 @@ const storeApp = (state = initialState, action) => {
       return {
         cart: state.cart,
         countCartItems: state.countCartItems,
-        totalCountOfProducts: action.totalCountOfProducts,
+        totalCountOfProducts: state.totalCountOfProducts,
         showedItems: state.showedItems,
         brands: action.brands,
         checkedBrands: state.checkedBrands,
@@ -62,11 +62,24 @@ const storeApp = (state = initialState, action) => {
         cart: state.cart,
         countCartItems: state.countCartItems,
         totalCountOfProducts: state.totalCountOfProducts,
-        showedItems: state.showedItems,
+        showedItems: action.showedItems,
         brands: state.brands,
         checkedBrands: action.checkedBrands,
         filterFrom: action.filterFrom,
         filterTo: action.filterTo
+      }
+
+    case 'CHANGE_TOTAL_COUNT_OF_PRODUCTS':
+      return {
+        cart: state.cart,
+        countCartItems: state.countCartItems,
+        totalCountOfProducts: state.totalCountOfProducts,
+        showedItems: state.showedItems,
+        brands: state.brands,
+        checkedBrands: state.checkedBrands,
+        filterFrom: state.filterFrom,
+        filterTo: state.filterTo,
+        totalCountOfProducts: action.totalCountOfProducts
       }
 
     default:

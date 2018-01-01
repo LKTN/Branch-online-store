@@ -31,7 +31,7 @@ const mapStateToProps = state => {
   return {
     showedItems: state.showedItems,
     totalCountOfProducts: state.totalCountOfProducts,
-    showFilter: state.totalCountOfProducts - state.showedItems == 0 ? false : true,
+    showFilter: state.totalCountOfProducts - state.showedItems <= 0 ? false : true,
     hiddenItems: state.totalCountOfProducts - state.showedItems
   }
 }

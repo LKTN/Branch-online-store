@@ -15,10 +15,9 @@ export const addToCart = (name, price, brand, slug) => {
     }
   }
 
-export const addInfoProductData = (totalCountOfProducts, brands) => {
+export const addInfoProductData = (brands) => {
   return {
     type: 'ADD_INFO_PRODUCT_DATA',
-    totalCountOfProducts: totalCountOfProducts,
     brands: brands
   }
 }
@@ -28,6 +27,14 @@ export const applyFilterForm = (filterFrom, filterTo, checkedBrands) => {
     type: 'APPLY_FILTER_FORM',
     filterFrom: filterFrom,
     filterTo: filterTo,
-    checkedBrands: checkedBrands
+    checkedBrands: checkedBrands,
+    showedItems: 6
+  }
+}
+
+export const changeTotalCountOfProducts = (totalCountOfProducts) => {
+  return {
+    type: 'CHANGE_TOTAL_COUNT_OF_PRODUCTS',
+    totalCountOfProducts: totalCountOfProducts
   }
 }
