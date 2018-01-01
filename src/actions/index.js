@@ -38,3 +38,16 @@ export const changeTotalCountOfProducts = (totalCountOfProducts) => {
     totalCountOfProducts: totalCountOfProducts
   }
 }
+
+export const changeCountOfCutProduct = (CountOfCutProduct) => {
+  return {
+    type: 'CHANGE_COUNT_OF_CUT_PRODUCT'
+  }
+}
+
+export const deleteCartProduct = (cart) => {
+  return {
+    type: 'DELETE_CART_PRODUCT',
+    cart: cart
+  }
+}
