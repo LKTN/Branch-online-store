@@ -10,8 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 18%;
-    min-width: 115px;
+    width: 130px;
   }
 
   &__image {
@@ -77,4 +76,13 @@
   &__delete {
     text-decoration: underline dotted;
   }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
 }

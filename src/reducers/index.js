@@ -82,6 +82,19 @@ const storeApp = (state = initialState, action) => {
         totalCountOfProducts: action.totalCountOfProducts
       }
 
+    case 'CHANGE_COUNT_OF_CUT_PRODUCT':
+      return {
+        cart: action.cart,
+        countCartItems: state.countCartItems,
+        totalCountOfProducts: state.totalCountOfProducts,
+        showedItems: state.showedItems,
+        brands: state.brands,
+        checkedBrands: state.checkedBrands,
+        filterFrom: state.filterFrom,
+        filterTo: state.filterTo,
+        totalCountOfProducts: state.totalCountOfProducts        
+      }
+
     case 'DELETE_CART_PRODUCT':
       return {
         cart: action.cart,

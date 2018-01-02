@@ -1,0 +1,33 @@
+.formCartProduct {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  
+  &__headline {
+    color: #4e4c4c;
+  }
+
+  &__totalAmount {
+    color: #4e4c4c;
+  }
+
+  &__input {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
+  &__textarea {
+    resize: none;
+    height: 80px;
+    margin-bottom: 25px;
+    padding: 5px;
+  }
+
+  &__btn {
+    width: 30%;
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 10px 0;
+  }
+}

@@ -11,67 +11,80 @@ let fallbackData ={
             name: 'Item 1',
             price: 8500,
             brand: 'brand1',
-            slug: 'item-1'
+            slug: 'item-1',
+            count: 1
           },{
             name: 'Item 2',
             price: 8500,
             brand: 'brand2',
-            slug: 'item-2'
+            slug: 'item-2',
+            count: 1
           },{
             name: 'Item 3',
             price: 8500,
             brand: 'brand3',
-            slug: 'item-3'
+            slug: 'item-3',
+            count: 1
           },{
             name: 'Item 4',
             price: 8500,
             brand: 'brand1',
-            slug: 'item-4'
+            slug: 'item-4',
+            count: 1
           },{
             name: 'Item 5',
             price: 8500,
             brand: 'brand2',
-            slug: 'item-5'
+            slug: 'item-5',
+            count: 1
           },{
             name: 'Item 6',
             price: 8500,
             brand: 'brand3',
-            slug: 'item-6'
+            slug: 'item-6',
+            count: 1
           },{
             name: 'Item 7',
             price: 8500,
             brand: 'brand1',
-            slug: 'item-7'
+            slug: 'item-7',
+            count: 1
           },{
             name: 'Item 8',
             price: 8500,
             brand: 'brand2',
-            slug: 'item-8'
+            slug: 'item-8',
+            count: 1
           },{
             name: 'Item 9',
             price: 8500,
             brand: 'brand3',
-            slug: 'item-9'
+            slug: 'item-9',
+            count: 1
           },{
             name: 'Item 10',
             price: 8500,
             brand: 'brand3',
-            slug: 'item-10'
+            slug: 'item-10',
+            count: 1
           },{
             name: 'Item 11',
             price: 8500,
             brand: 'brand3',
-            slug: 'item-11'
+            slug: 'item-11',
+            count: 1
           },{
             name: 'Item 12',
             price: 8500,
             brand: 'brand3',
-            slug: 'item-12'
+            slug: 'item-12',
+            count: 1
           },{
             name: 'Item 13',
             price: 8500,
             brand: 'brand3',
-            slug: 'item-13'
+            slug: 'item-13',
+            count: 1
           }
         ]
 }

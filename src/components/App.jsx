@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './Header.jsx';
 import IndexWrapper from './IndexWrapper.jsx';
-import CartWrapper from './CartWrapper.jsx';
+import FormCartProduct from './FormCartProduct.jsx';
 
 let App = () => {
   return (
@@ -12,7 +12,7 @@ let App = () => {
 
         <Switch>
           <Route exact path='/' component={IndexWrapper} />
-          <Route path='/cart' component={CartWrapper} />
+          <Route path='/cart' component={FormCartProduct} />
         </Switch>
       </div>
     </BrowserRouter>
