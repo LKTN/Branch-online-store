@@ -1,4 +1,5 @@
 .formCartProduct {
+  width: 70%;
   display: flex;
   flex-direction: column;
   margin-bottom: 50px;
@@ -7,16 +8,26 @@
     color: #4e4c4c;
   }
 
+  &__userData {
+    width: 70%;
+    display: flex;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
   &__totalAmount {
     color: #4e4c4c;
   }
 
   &__input {
+    width: 100%;
     margin-bottom: 10px;
     padding: 5px;
   }
 
   &__textarea {
+    width: 100%;
     resize: none;
     height: 80px;
     margin-bottom: 25px;

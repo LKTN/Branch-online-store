@@ -90,6 +90,7 @@ let fallbackData ={
 }
 let goodsData = fallbackData;
 
+httpRequest.open('GET', 'somewhere');
 httpRequest.onreadystatechange = function() {
   try {
     if (httpRequest.readyState == 4 & httpRequest.status == 200) {
@@ -100,7 +101,6 @@ httpRequest.onreadystatechange = function() {
   }
 };
 
-httpRequest.open('GET', 'somewhere', true);
 httpRequest.send();
 
 let ProductSection = (props) => {

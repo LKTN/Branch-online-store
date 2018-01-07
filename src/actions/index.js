@@ -39,9 +39,9 @@ export const changeTotalCountOfProducts = (totalCountOfProducts) => {
   }
 }
 
-export const changeCountOfCartProduct = (cart) => {
+export const updateCartProducts = (cart) => {
   return {
-    type: 'CHANGE_COUNT_OF_CUT_PRODUCT',
+    type: 'UPDATE_CART_PRODUCTS',
     cart: cart
   }
 }
@@ -50,5 +50,11 @@ export const deleteCartProduct = (cart) => {
   return {
     type: 'DELETE_CART_PRODUCT',
     cart: cart
+  }
+}
+
+export const deleteCartProducts = (cart) => {
+  return {
+    type: 'DELETE_CART_PRODUCTS'
   }
 }

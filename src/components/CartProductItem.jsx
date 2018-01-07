@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { changeCountOfCartProduct } from '../actions/index.js';
+import { updateCartProducts } from '../actions/index.js';
 import { deleteCartProduct } from '../actions/index.js';
 
 let CartProductItem = (props) => {
@@ -15,7 +15,7 @@ let CartProductItem = (props) => {
       return product;
     });
 
-    props.dispatch( changeCountOfCartProduct(updatedCart) );
+    props.dispatch( updateCartProducts(updatedCart) );
   };
 
   let countUp = (evt) => {

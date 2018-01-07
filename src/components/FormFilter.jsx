@@ -8,7 +8,12 @@ let FormFilter = (props) => {
   let listBrands = props.brands.map((brand, ind) => (
       <li className='formFilter__item' key={ind}>
         <label className='formFilter__label'>
-          <input type='checkbox' value={brand} className='formFilter__checkbox' ref={(checkbox) => {brandsArray.push(checkbox)}} />{brand}
+          <input 
+            type='checkbox' 
+            value={brand} 
+            className='formFilter__checkbox' 
+            ref={(checkbox) => {brandsArray.push(checkbox)}} 
+          />{brand}
         </label>
       </li>
     )
@@ -59,13 +64,13 @@ let FormFilter = (props) => {
       </button>
     </form>
   )
-}
+};
 
 const mapStateToProps = state => {
   return {
     brands: state.brands
-  }
-}
+  };
+};
 
 FormFilter = connect(mapStateToProps)(FormFilter);
 

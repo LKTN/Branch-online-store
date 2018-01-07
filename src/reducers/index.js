@@ -14,6 +14,7 @@ const storeApp = (state = initialState, action) => {
   switch(action.type){
     case 'ADD_TO_CART':
       return {
+        ...state,
         cart: [
           ...state.cart,
           {
@@ -24,46 +25,25 @@ const storeApp = (state = initialState, action) => {
             count: 1
           }
         ],
-        countCartItems: state.countCartItems + 1,
-        totalCountOfProducts: state.totalCountOfProducts,
-        showedItems: state.showedItems,
-        brands: state.brands,
-        checkedBrands: state.checkedBrands,
-        filterFrom: state.filterFrom,
-        filterTo: state.filterTo
+        countCartItems: state.countCartItems + 1
       }
 
     case 'TOGGLE_FILTER':
       return {
-        cart: state.cart,
-        countCartItems: state.countCartItems,
-        totalCountOfProducts: state.totalCountOfProducts,
-        showedItems: action.showedItems,
-        brands: state.brands,
-        checkedBrands: state.checkedBrands,
-        filterFrom: state.filterFrom,
-        filterTo: state.filterTo
+        ...state,
+        showedItems: action.showedItems
       };
 
     case 'ADD_INFO_PRODUCT_DATA':
       return {
-        cart: state.cart,
-        countCartItems: state.countCartItems,
-        totalCountOfProducts: state.totalCountOfProducts,
-        showedItems: state.showedItems,
-        brands: action.brands,
-        checkedBrands: state.checkedBrands,
-        filterFrom: state.filterFrom,
-        filterTo: state.filterTo
+        ...state,
+        brands: action.brands
       };
 
     case 'APPLY_FILTER_FORM':
       return {
-        cart: state.cart,
-        countCartItems: state.countCartItems,
-        totalCountOfProducts: state.totalCountOfProducts,
+        ...state,
         showedItems: action.showedItems,
-        brands: state.brands,
         checkedBrands: action.checkedBrands,
         filterFrom: action.filterFrom,
         filterTo: action.filterTo
@@ -71,41 +51,28 @@ const storeApp = (state = initialState, action) => {
 
     case 'CHANGE_TOTAL_COUNT_OF_PRODUCTS':
       return {
-        cart: state.cart,
-        countCartItems: state.countCartItems,
-        totalCountOfProducts: state.totalCountOfProducts,
-        showedItems: state.showedItems,
-        brands: state.brands,
-        checkedBrands: state.checkedBrands,
-        filterFrom: state.filterFrom,
-        filterTo: state.filterTo,
+        ...state,
         totalCountOfProducts: action.totalCountOfProducts
       }
 
-    case 'CHANGE_COUNT_OF_CUT_PRODUCT':
+    case 'UPDATE_CART_PRODUCTS':
       return {
-        cart: action.cart,
-        countCartItems: state.countCartItems,
-        totalCountOfProducts: state.totalCountOfProducts,
-        showedItems: state.showedItems,
-        brands: state.brands,
-        checkedBrands: state.checkedBrands,
-        filterFrom: state.filterFrom,
-        filterTo: state.filterTo,
-        totalCountOfProducts: state.totalCountOfProducts        
+        ...state,
+        cart: action.cart
       }
 
     case 'DELETE_CART_PRODUCT':
       return {
+        ...state,
         cart: action.cart,
         countCartItems: state.countCartItems - 1,
-        totalCountOfProducts: state.totalCountOfProducts,
-        showedItems: state.showedItems,
-        brands: state.brands,
-        checkedBrands: state.checkedBrands,
-        filterFrom: state.filterFrom,
-        filterTo: state.filterTo,
-        totalCountOfProducts: state.totalCountOfProducts
+      }
+
+    case 'DELETE_CART_PRODUCTS':
+      return {
+        ...state,
+        cart: [],
+        countCartItems: 0,
       }
 
     default:

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 let CartLink = (props) => {
   return (
     <div className='cartLink'>
-      <Link to='/cart' className='cartLink__link'>{props.countCartItems} items</Link>
+      <Link to='/cart' className='cartLink__link'>{props.countCartItems} {props.countCartItems == 1 ? 'item' : 'items'} in cart</Link>
     </div>
   );
 };

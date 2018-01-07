@@ -22,7 +22,11 @@ class ProductList extends React.Component {
     }
 
     let lists = this.props.data.map( (product, ind) => {
-      if(product.price >= this.props.filterFrom && product.price <= this.props.filterTo && checkedBrands.find( brand => brand == product.brand)){
+      if(
+        product.price >= this.props.filterFrom 
+        && product.price <= this.props.filterTo 
+        && checkedBrands.find( brand => brand == product.brand)
+        ){
         return <ProductItem name={product.name} price={product.price} brand={product.brand} slug={product.slug} key={ind} />
       }
         return false
