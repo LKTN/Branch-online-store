@@ -45,6 +45,10 @@
   &__count {
     width: 40px;
     text-align: center;
+
+    &--invalid {
+      border: 1px solid red;
+    }
   }
 
   &__countUp {

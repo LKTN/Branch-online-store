@@ -19,17 +19,31 @@ let CartProductItem = (props) => {
   };
 
   let countUp = (evt) => {
-    evt.target.nextElementSibling.value = +evt.target.nextElementSibling.value + 1;
-    changeCountOfProduct(+evt.target.nextElementSibling.value);
+    let newValue = +evt.target.nextElementSibling.value + 1;
+    validateCount(evt.target.nextElementSibling, newValue)
+    evt.target.nextElementSibling.value = newValue;
+    changeCountOfProduct(newValue);
   }
 
   let countDown = (evt) => {
-    // if(evt.target.previousElementSibling.value <= 1) {
-    //   alert('You can\'t order less than 1 product ');
-    //   return;
-    // }
-    evt.target.previousElementSibling.value -= 1;
-    changeCountOfProduct(+evt.target.previousElementSibling.value);
+    let newValue = evt.target.previousElementSibling.value - 1;
+    if(newValue < 1) {
+      alert('You can\'t order less than 1 item');
+      return;
+    }
+    evt.target.previousElementSibling.value = newValue;
+    validateCount(evt.target.previousElementSibling, newValue)
+    changeCountOfProduct(newValue);
+  }
+
+  let onInputValueChange = (evt) => {
+    let newValue = evt.target.value;
+    if( isNaN(newValue) || newValue < 1 ){
+      newValue = 0;
+    }
+
+    validateCount(evt.target, newValue);
+    changeCountOfProduct( newValue );
   }
 
   let deleteCartItem = (evt) => {
@@ -38,12 +52,13 @@ let CartProductItem = (props) => {
     props.dispatch( deleteCartProduct(updatedCart) );
   }
 
-  let onInputValueChange = (evt) => {
-    // if( !parseInt(evt.target.value) ) {
-    //   alert('Incorrect data');
-    //   return;
-    // }
-    changeCountOfProduct( parseInt(evt.target.value) );
+  let validateCount = (elem, value) => {
+    if(value > 0) {
+      elem.classList.remove('cartProductItem__count--invalid');
+      return true;
+    }
+    elem.classList.add('cartProductItem__count--invalid');
+    return false;
   }
 
   return (
@@ -56,9 +71,16 @@ let CartProductItem = (props) => {
       <div className='cartProductItem__price-countWrapper'>
         <span className='cartProductItem__price'>{props.price}</span>
         <div className='cartProductItem__countWrapper'>
-          <button className='cartProductItem__countUp' onClick={countUp}></button>
-          <input className='cartProductItem__count' type='number' min='1' defaultValue='1' onChange={onInputValueChange} required />
-          <button className='cartProductItem__countDown' onClick={countDown}></button>
+          <button className='cartProductItem__countUp' type='button' onClick={countUp}></button>
+          <input 
+            className='cartProductItem__count' 
+            type='number' 
+            defaultValue={props.count} 
+            onChange={onInputValueChange} 
+            min='1' 
+            required 
+          />
+          <button className='cartProductItem__countDown' type='button' onClick={countDown}></button>
         </div>
       </div>
       <a href='#' className='cartProductItem__delete' onClick={deleteCartItem}>Delete</a>

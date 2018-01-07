@@ -9,7 +9,15 @@ let FormCartProduct = (props) => {
   }
   
   let onSubmitForm = (evt) => {
-    console.log(evt);
+    evt.preventDefault();
+    // if( props.cart.find( el => el.count == 0) ){
+    //   alert('Incorrect data');
+    //   return;
+    // }
+    console.log('Success');
+    // var request = new XMLHttpRequest();
+    // request.open('POST', 'somewhere');
+    // request.setRequestHeader('accept', 'application/json');
   }
 
   return (
